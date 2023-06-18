@@ -1,0 +1,27 @@
+=> node start - this command is use for run .js file using node.
+=> npm start - this command is use for run node app. before this command you have to create node app -
+=> npm init - this command is use to create node app. 
+=> npm install packagename - to install package(like: mongoose, express, nodemon)
+=> npm uninstall packagename - ...
+=> 
+
+
+
+=> use of nodemon (it is like liveserver - after save page it will run)
+    # in package.json - modify scripts key....example... 
+     "scripts": {
+        "start": "nodemon index.js"
+    },
+
+
+
+    >> express is the replacement of http server.
+    >> 
+
+
+
+
+    MONGODB
+    ===========================================================================
+    => mongod --dbpath C:\xampp\htdocs\NODE\data\db\   - this command is help to create custom data folder and run mongo
+    => mongod - use to run mongodb server 
