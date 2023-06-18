@@ -5,15 +5,11 @@
 => npm uninstall packagename - ...
 => 
 
-
-
 => use of nodemon (it is like liveserver - after save page it will run)
     # in package.json - modify scripts key....example... 
      "scripts": {
         "start": "nodemon index.js"
     },
-
-
 
     >> express is the replacement of http server.
     >> 
@@ -23,5 +19,29 @@
 
     MONGODB
     ===========================================================================
+    (install mongodb and mongo shell - mongodb is the server and mongo shell is command line.)
+    >> set the environment veriable for both mongodb and mongo shell
+    >> database <=>databasse, collection <=> table, row <=> document
+
     => mongod --dbpath C:\xampp\htdocs\NODE\data\db\   - this command is help to create custom data folder and run mongo
     => mongod - use to run mongodb server 
+    => mongosh - use run the commandline orr client
+    => show dbs - to see all db
+    => use dbname - create and switch to db
+    => db - to see the current db 
+    => show collections - to create collection
+    => db.createCollection('collectionName); - to create collection on current dir.
+    => db.collectionName.insert({name:'papun',age:24}); - create collection with value
+    => db.collectionName.update({_id: ObjectId('ccgkcsl97097060977'),age:25}); - update value
+    => db.collectionName.remove({_id: ObjectId('ccgkcsl97097060977'),age:25}); - delete value
+       >> insert (old), insertOne, insertMany - 2 are recommended 
+       >> update (old), updateOne, updateMany - 2 are recommended 
+       >> remove (old), deleteOne, deleteMany - 2 are recommended 
+       >> for any update error search operators - $min,$max,$set,...
+    => db.collectionName.drop() - to delete the collection
+    => db.dropDatabase() - to delete database 
+    => db.collectionName.find() - get the result or list of rows
+       >>limit(2), pretty(), sort({price:-1}) - asc|desc ,sort({price:{$eq:900}}), count()
+
+ 
+
