@@ -1,3 +1,19 @@
+some packages
+=================================
+modules are or library(already written code):
+// 1) Http
+// 2) Os 
+// 3) Fs - filesystem 
+// 4) Express 
+// 5) Nodemon 
+// 6) Url - to use website url or uri
+// 7) nodemailer 
+// 8) hbs - tamplate engine
+
+
+
+some basic commands
+===============================
 => node start - this command is use for run .js file using node.
 => npm start - this command is use for run node app. before this command you have to create node app -
 => npm init - this command is use to create node app. 
