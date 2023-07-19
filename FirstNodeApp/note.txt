@@ -1,14 +1,14 @@
 some packages
 =================================
 modules are or library(already written code):
-// 1) Http
-// 2) Os 
-// 3) Fs - filesystem 
-// 4) Express 
-// 5) Nodemon 
-// 6) Url - to use website url or uri
-// 7) nodemailer 
-// 8) hbs - tamplate engine
+1) Http
+2) Os 
+3) Fs - filesystem 
+4) Express 
+5) Nodemon 
+6) Url - to use website url or uri
+7) nodemailer 
+8) hbs - tamplate engine
 
 
 
@@ -18,9 +18,7 @@ some basic commands
 => npm start - this command is use for run node app. before this command you have to create node app -
 => npm init - this command is use to create node app. 
 => npm install packagename - to install package(like: mongoose, express, nodemon)
-=> npm uninstall packagename - ...
-=> 
-
+=> npm install - This command will read the dependencies listed in the package.json file and install them in the node_modules directory in your project.
 => use of nodemon (it is like liveserver - after save page it will run)
     # in package.json - modify scripts key....example... 
      "scripts": {
@@ -31,33 +29,91 @@ some basic commands
     >> 
 
 
+VIEW - EJS
+===================================================================
+=> const ejs = require('ejs');
+=> app.set('view engine', 'ejs');
+=> res.render('form'); // it is automatically search the form.ejs file inside ./views/
+=> <% logic %>
+=> <%= print %>
+=> <%- html %>
+=> <%- include('common/header'); %>
 
 
-    MONGODB
-    ===========================================================================
-    (install mongodb and mongo shell - mongodb is the server and mongo shell is command line.)
-    >> set the environment veriable for both mongodb and mongo shell
-    >> database <=>databasse, collection <=> table, row <=> document
+MONGODB
+===========================================================================
+(install mongodb and mongo shell - mongodb is the server and mongo shell is command line.)
+>> set the environment veriable for both mongodb and mongo shell
+>> database <=>databasse, collection <=> table, row <=> document
 
-    => mongod --dbpath C:\xampp\htdocs\NODE\data\db\   - this command is help to create custom data folder and run mongo
-    => mongod - use to run mongodb server 
-    => mongosh - use run the commandline orr client
-    => show dbs - to see all db
-    => use dbname - create and switch to db
-    => db - to see the current db 
-    => show collections - to create collection
-    => db.createCollection('collectionName); - to create collection on current dir.
-    => db.collectionName.insert({name:'papun',age:24}); - create collection with value
-    => db.collectionName.update({_id: ObjectId('ccgkcsl97097060977'),age:25}); - update value
-    => db.collectionName.remove({_id: ObjectId('ccgkcsl97097060977'),age:25}); - delete value
-       >> insert (old), insertOne, insertMany - 2 are recommended 
-       >> update (old), updateOne, updateMany - 2 are recommended 
-       >> remove (old), deleteOne, deleteMany - 2 are recommended 
-       >> for any update error search operators - $min,$max,$set,...
-    => db.collectionName.drop() - to delete the collection
-    => db.dropDatabase() - to delete database 
-    => db.collectionName.find() - get the result or list of rows
-       >>limit(2), pretty(), sort({price:-1}) - asc|desc ,sort({price:{$eq:900}}), count()
+=> mongod --dbpath C:\xampp\htdocs\NODE\data\db\   - this command is help to create custom data folder and run mongo
+=> mongod - use to run mongodb server 
+=> mongosh - use run the commandline orr client
+=> show dbs - to see all db
+=> use dbname - create and switch to db
+=> db - to see the current db 
+=> show collections - to create collection
+=> db.createCollection('collectionName); - to create collection on current dir.
+=> db.collectionName.insert({name:'papun',age:24}); - create collection with value
+=> db.collectionName.update({_id: ObjectId('ccgkcsl97097060977'),age:25}); - update value
+=> db.collectionName.remove({_id: ObjectId('ccgkcsl97097060977'),age:25}); - delete value
+   >> insert (old), insertOne, insertMany - 2 are recommended 
+   >> update (old), updateOne, updateMany - 2 are recommended 
+   >> remove (old), deleteOne, deleteMany - 2 are recommended 
+   >> for any update error search operators - $min,$max,$set,...
+=> db.collectionName.drop() - to delete the collection
+=> db.dropDatabase() - to delete database 
+=> db.collectionName.find() - get the result or list of rows
+   >>limit(2), pretty(), sort({price:-1}) - asc|desc ,sort({price:{$eq:900}}), count()
 
  
 
+INTERVIEW
+==================================
+=> filter() - used to filter elements based on a condition.
+   >> numbers.filter((number) => number % 2 === 0);    // Output: [2, 4]
+=> map() - used to transform elements into a new array
+   >> numbers.map((number) => number ** 2);   // Output: [1, 4, 9, 16, 25]
+=> forEach() - used when you want to perform an operation on each element without creating a new array
+   >> numbers.forEach((number) => { console.log(number); });   // Output: 1, 2, 3, 4, 5
+=> Core modules -> fs, buffer, http
+=> __dirname vs __filename vs join(__dirname,'folderName');
+=> package vs modules
+=> node ./index.js  vs  nodemon ./index.js
+=> PHP - sync , Node/Js - Async
+=> Advantages - callback|Async-await|Promise
+=> Node is a single threaded langauge.
+=> Event loop => call Stack -> Node APIs -> Callback Queue => call Stack(loop)
+=> write vs send vs render
+=> middleware - 1) Application/Global middleware 
+                2) Route middleware
+                3) Group middleware
+=> Event -> Emit , on
+=> Disadvantage - 
+         let a = 10;
+         let b = 20;
+
+         setTimeOut(()=>{
+            b = 30;
+         },2000);
+
+         console.log('a+b);
+:: it should 40 but o/p - 30
+
+Solution with promise - 
+         let a = 10;
+         let b = 20;
+
+         let waitingData = new Promise((resolve,reject)=>{
+                  setTimeOut(()=>{
+                     resolve(30);
+                  },2000);
+         });
+         
+         waitingData.then((data)=>{
+            b = data;
+            console.log('a+b);
+         });
+:: o/p - 40
+
+ 
