@@ -23,7 +23,7 @@ router.get('/:courseId',async (req,res)=>{
     }
 });
 
-router.post('/',async (req,res)=>{  
+router.post('/create',async (req,res)=>{  
     try {
         const crs = await courses.create(req.body);
         res.json(crs);

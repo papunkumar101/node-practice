@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const Course = mongoose.Schema({
     title:{
         type:String,
-        require:true
+        require:true,
+        unique:true
     },
     content:{
         type:String,
