@@ -84,7 +84,7 @@ INTERVIEW
 => Advantages - callback|Async-await|Promise
 => Node is a single threaded langauge.
 => Event loop => call Stack -> Node APIs -> Callback Queue => call Stack(loop)
-=> write vs send vs render
+=> write vs send vs render (if you write only res.write() the page will be loading continuously until you write res.end(). Whereas if you write res.send() there is no need of res.end(). res.send() basically it does both res.write() and res.end(). and render() works when you have a templating engine.)
 => middleware - 1) Application/Global middleware 
                 2) Route middleware
                 3) Group middleware
